@@ -3,7 +3,7 @@
 cd resources/cql
 
 echo "Waiting for DSE to settle"
-sleep 240
+sleep 120
 
 cqlsh localhost -f create_schema.cql
 #while [ $? -ne 0 ]; do

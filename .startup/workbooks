@@ -1,8 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-ln -sf /tmp/datastax-studio-6.0.0 /tmp/studio
+dse client-tool alwayson-sql reconfig
+
+cd /tmp
+rm -rf /tmp/datastax-studio*
+wget --no-check-certificate --content-disposition -P /tmp https://downloads.datastax.com/datastax-studio/datastax-studio-6.7.0.tar.gz
+tar -xvf /tmp/datastax-studio-6.7.0.tar.gz
+ln -sf /tmp/datastax-studio-6.7.0 /tmp/studio
 
 echo "Downloading workbooks .."
+test -e dse-workshop-studio.tar.gz && rm dse-workshop-studio.tar.gz
 wget --no-check-certificate --content-disposition -P /tmp https://github.com/russkatz/dse-halfday-workshop/raw/master/files/dse-workshop-studio.tar.gz
 
 echo "Configuring DSE Studio .."
