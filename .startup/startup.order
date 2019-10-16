@@ -8,7 +8,7 @@ producer
 dgl
 node1
 node2
-workbooks
 setupcql
 loadgraph
+workbooks
 #streamingJob

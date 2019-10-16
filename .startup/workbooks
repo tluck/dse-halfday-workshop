@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dse client-tool alwayson-sql reconfig
+dse client-tool alwayson-sql start
 
 cd /tmp
 rm -rf /tmp/datastax-studio*
