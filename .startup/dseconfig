@@ -10,14 +10,14 @@ sudo sed -ie 's/ jps_/\#jps/' /etc/dse/dse.yaml
 
 echo Original IPs:
 grep _address /etc/dse/cassandra/cassandra.yaml|grep -v "#"
-ip=$( grep listen_address /etc/dse/cassandra/cassandra.yaml|grep -v "#")
-ip=${ip##* }
-sudo sed -E -e's/^(native_transport_address: )([0-9].*)/\10.0.0.0/g' \
-            -e"s/^(broadcast_address: )([0-9].*)/\1$ip/g" \
-            -e"s/^(native_transport_broadcast_address: )([0-9].*)/\1$ip/g" \
-            -i /etc/dse/cassandra/cassandra.yaml 
-echo Modified IPs:
-grep _address /etc/dse/cassandra/cassandra.yaml|grep -v "#"
+#ip=$( grep listen_address /etc/dse/cassandra/cassandra.yaml|grep -v "#")
+#ip=${ip##* }
+#sudo sed -E -e's/^(native_transport_address: )([0-9].*)/\10.0.0.0/g' \
+#            -e"s/^(broadcast_address: )([0-9].*)/\1$ip/g" \
+#            -e"s/^(native_transport_broadcast_address: )([0-9].*)/\1$ip/g" \
+#            -i /etc/dse/cassandra/cassandra.yaml 
+#echo Modified IPs:
+#grep _address /etc/dse/cassandra/cassandra.yaml|grep -v "#"
 
 
 # Enable graph
