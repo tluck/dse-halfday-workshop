@@ -4,8 +4,11 @@ sudo pip install kafka-python
 pip install kafka-python
 
 #wget -P /tmp/  http://mirror.cogentco.com/pub/apache/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz
-wget -P /tmp/  https://archive.apache.org/dist/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz
+
+for pid in `ps -aef | grep [s]kafka | awk '{print $2}'`; do kill -9 $pid; done
 sudo rm -rf /tmp/kakfa* /opt/kafka
+
+wget -P /tmp/  https://archive.apache.org/dist/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz
 
 mkdir -p /opt/kafka
 cd /opt/kafka

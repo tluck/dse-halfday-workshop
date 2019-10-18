@@ -1,14 +1,14 @@
 dseconfig
 restartdse
+node1
+node2
 docs
 packages
 #redir
 kafka
 producer
-dgl
-node1
-node2
 setupcql
+#dgl
 loadgraph
 workbooks
 #streamingJob
