@@ -2,17 +2,18 @@
 
 myhost=`hostname`
 
-if [ `hostname` = "node0" ]; then
-  sudo service dse stop
-  sleep 60
-  sudo service dse start
-  sleep 60
-  sudo service dse start
-else
-  sleep 240
-  sudo service dse stop
-  sleep 60
-  sudo service dse start
-  sleep 60
-  sudo service dse start
-fi
+#if [ `hostname` = "node0" ]; then
+  sudo service dse restart
+   #Wait for DSE to be started
+   dsetool status
+   while [ $? -ne 0 ]; do
+     sleep 5
+     dsetool status
+   done
+
+#else
+#  sleep 240
+#  sudo service dse stop
+#  sleep 60
+#  sudo service dse start
+#fi
