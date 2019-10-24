@@ -6,9 +6,13 @@ if [ `hostname` = "node0" ]; then
   sudo service dse stop
   sleep 60
   sudo service dse start
+  sleep 60
+  sudo service dse start
 else
-  sleep 120
+  sleep 240
   sudo service dse stop
+  sleep 60
+  sudo service dse start
   sleep 60
   sudo service dse start
 fi
